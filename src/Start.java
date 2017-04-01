@@ -1,5 +1,3 @@
-import com.sun.org.apache.xpath.internal.operations.Neg;
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -15,14 +13,11 @@ public class Start {
             double a = in.nextDouble();
             System.out.println("insert b");
             double b = in.nextDouble();
-            if (b == 0) throw new ArithmeticException();
-            if (a/b <0) throw new NegativeDomainException();
 
-            double result = Math.sqrt(a/b);
-            System.out.println(result);
+            System.out.println("Result of calculating: " + Calculate.getResult(a,b));
         }
         catch (InputMismatchException e) {
-            System.out.println("Błedne dane");
+            System.out.println("You enter invalid character!! Application accepts only numbers.");
         }
         catch (ArithmeticException e) {
             System.out.println("b equals 0 and this is illegal for this operation");
